@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGOL vs. Enterprise — MCP GIS Hub</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav__brand" href="index.html"><span class="dot"></span> MCP GIS Hub</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="agol.html">ArcGIS Online</a></li>
+      <li><a href="enterprise.html">ArcGIS Enterprise</a></li>
+      <li><a href="comparison.html">Comparison</a></li>
+      <li><a href="examples.html">Examples &amp; Diagrams</a></li>
+      <li><a href="api-docs.html">API Docs</a></li>
+      <li><a href="https://github.com/sstasio/mcp-gis-hub" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <div class="container">
+    <h1>ArcGIS Online vs. ArcGIS Enterprise</h1>
+    <p class="lead">A side‑by‑side comparison for teams deciding how the MCP server should route requests
+    between a cloud org and an on‑prem portal.</p>
+
+    <section>
+      <h2>Routing diagram</h2>
+      <figure class="diagram">
+        <img src="assets/img/diagram-05-dual-environment-routing.svg" alt="Dual environment routing diagram">
+        <figcaption>A single MCP tool call fans out to the correct environment via a config flag or per-request parameter.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Feature comparison</h2>
+      <table>
+        <thead><tr><th>Aspect</th><th>ArcGIS Online</th><th>ArcGIS Enterprise</th></tr></thead>
+        <tbody>
+          <tr><td>Hosting</td><td>Esri‑managed cloud (SaaS)</td><td>Self‑hosted, on‑prem or VPC</td></tr>
+          <tr><td>Auth</td><td>OAuth 2.0 (app or user)</td><td>generateToken, SAML, PKI, LDAP</td></tr>
+          <tr><td>Network</td><td>Public internet, no VPN</td><td>Usually requires VPN / private link</td></tr>
+          <tr><td>Base URL pattern</td><td><code>https://www.arcgis.com</code>, <code>https://services.arcgis.com/{orgId}</code></td><td><code>https://host/portal</code>, <code>https://host/server</code></td></tr>
+          <tr><td>Token lifetime</td><td>Configurable, often longer</td><td>Short‑lived by default</td></tr>
+          <tr><td>Best fit</td><td>Public data, quick prototyping, org‑hosted layers</td><td>Sensitive/internal data, data residency requirements</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recommendation</h2>
+      <p class="section-lead">Most municipal GIS programs run <strong>both</strong> — public‑facing hub content
+      in AGOL, and sensitive facility/asset data in Enterprise. The MCP server's dual‑environment router
+      (see diagram above) lets a single Copilot Studio agent query either source transparently, based on
+      which organization owns the requested layer.</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>MCP GIS Hub</span><span>AGOL vs Enterprise</span></div></footer>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Docs (Swagger) — MCP GIS Hub</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+<style>
+  #swagger-ui { max-width: 1120px; margin: 24px auto 60px; padding: 0 24px; }
+  .topbar { display:none !important; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav__brand" href="index.html"><span class="dot"></span> MCP GIS Hub</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="agol.html">ArcGIS Online</a></li>
+      <li><a href="enterprise.html">ArcGIS Enterprise</a></li>
+      <li><a href="comparison.html">Comparison</a></li>
+      <li><a href="examples.html">Examples &amp; Diagrams</a></li>
+      <li><a href="api-docs.html" class="active">API Docs</a></li>
+    </ul>
+  </nav>
+</header>
+<div id="swagger-ui"></div>
+<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+<script>
+  window.onload = () => {
+    window.ui = SwaggerUIBundle({
+      url: "../openapi/mcp.yaml",
+      dom_id: "#swagger-ui",
+      presets: [SwaggerUIBundle.presets.apis],
+      layout: "BaseLayout"
+    });
+  };
+</script>
+</body>
+</html>

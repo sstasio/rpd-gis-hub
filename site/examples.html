@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examples &amp; Diagrams — MCP GIS Hub</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav__brand" href="index.html"><span class="dot"></span> MCP GIS Hub</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="agol.html">ArcGIS Online</a></li>
+      <li><a href="enterprise.html">ArcGIS Enterprise</a></li>
+      <li><a href="comparison.html">Comparison</a></li>
+      <li><a href="examples.html">Examples &amp; Diagrams</a></li>
+      <li><a href="api-docs.html">API Docs</a></li>
+      <li><a href="https://github.com/sstasio/mcp-gis-hub" target="_blank" rel="noopener">GitHub ↗</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <div class="container">
+    <h1>Architecture Diagrams &amp; Sample Calls</h1>
+    <p class="lead">All 12 diagrams, plus a worked example tool call and response.</p>
+
+    <section>
+      <h2>Sample MCP tool call</h2>
+      <div class="two-col">
+        <div>
+          <p class="section-lead mt-0">Request</p>
+          <pre><code>{
+  "tool": "queryFeatures",
+  "arguments": {
+    "environment": "enterprise",
+    "layer": "Park Facilities",
+    "where": "STATUS='Active'",
+    "outFields": ["FACILITYID","NAME","STATUS"]
+  }
+}</code></pre>
+        </div>
+        <div>
+          <p class="section-lead mt-0">Response</p>
+          <pre><code>{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "FACILITYID": "REC-0142",
+        "NAME": "Golden Gate Park Clubhouse",
+        "STATUS": "Active"
+      },
+      "geometry": { "type": "Point", "coordinates": [-122.47, 37.77] }
+    }
+  ]
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>All diagrams</h2>
+      <div class="grid" id="diagram-grid"></div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span>MCP GIS Hub</span><span>Examples &amp; diagrams</span></div></footer>
+<script src="assets/js/nav.js"></script>
+<script>
+const diagrams = [
+  ["diagram-01-mcp-architecture.svg", "1 · MCP Architecture", "Copilot → Copilot Studio → MCP Server → AGOL / Enterprise."],
+  ["diagram-02-copilot-studio-workflow.svg", "2 · Copilot Studio + MCP Workflow", "Turn-by-turn flow from prompt to answer."],
+  ["diagram-03-agol-integration-flow.svg", "3 · ArcGIS Online Integration Flow", "OAuth2 → portal search → feature query."],
+  ["diagram-04-enterprise-integration-flow.svg", "4 · ArcGIS Enterprise Integration Flow", "generateToken → portal search → map/feature service query."],
+  ["diagram-05-dual-environment-routing.svg", "5 · Dual-Environment Routing", "One router, two adapters: AGOL + Enterprise."],
+  ["diagram-06-tool-execution-sequence.svg", "6 · Tool Execution Sequence", "Swimlane sequence across Copilot Studio, MCP, Auth, REST API."],
+  ["diagram-07-deployment-pipeline.svg", "7 · Deployment Pipeline (CI/CD)", "Push → Actions → install → test → build → deploy to Pages."],
+  ["diagram-08-repo-site-structure.svg", "8 · Repo & Site Structure", "What's published to GitHub Pages vs. CI-only."],
+  ["diagram-09-unified-gis-data-flow.svg", "9 · Unified GIS Data Flow", "MCP Server as the hub across Copilot, AGOL, Enterprise, webTMA/Snowflake, Survey123."],
+  ["diagram-10-auth-token-flow.svg", "10 · Authentication & Token Flow", "How tokens are requested, cached, and refreshed — never exposed to the client."],
+  ["diagram-11-rest-api-interaction-model.svg", "11 · ArcGIS REST API Interaction Model", "Which REST endpoints map to which MCP tool."],
+  ["diagram-12-server-internal-pipeline.svg", "12 · Server Internal Processing Pipeline", "Validate → resolve env → auth → execute → normalize."]
+];
+const grid = document.getElementById("diagram-grid");
+diagrams.forEach(([file, title, caption]) => {
+  const fig = document.createElement("figure");
+  fig.className = "diagram";
+  fig.innerHTML = `<img src="assets/img/${file}" alt="${title}" loading="lazy">
+    <figcaption><strong>${title}</strong><br>${caption}</figcaption>`;
+  grid.appendChild(fig);
+});
+</script>
+</body>
+</html>
