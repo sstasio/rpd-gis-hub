@@ -1,0 +1,161 @@
+openapi: 3.0.3
+info:
+  title: MCP GIS Hub Tools API
+  description: >
+    REST-style documentation of the Model Context Protocol (MCP) tools exposed by the
+    MCP GIS Hub server. These tools proxy calls to ArcGIS Online and ArcGIS Enterprise
+    REST APIs and are invoked by MCP clients such as Microsoft Copilot Studio.
+  version: "1.0.0"
+  contact:
+    name: San Francisco Recreation & Parks GIS
+servers:
+  - url: http://localhost:3000
+    description: Node.js MCP server (local dev)
+  - url: http://localhost:8000
+    description: Python MCP server (local dev)
+
+tags:
+  - name: discovery
+    description: Finding layers/items in a portal
+  - name: query
+    description: Querying feature data
+  - name: meta
+    description: Server health and environment introspection
+
+paths:
+  /tools/findLayer:
+    post:
+      operationId: findLayer
+      tags: [discovery]
+      summary: Resolve a human-readable layer name to a service URL and item metadata.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindLayerRequest'
+            examples:
+              enterprise:
+                value:
+                  environment: enterprise
+                  query: "Park Facilities"
+              agol:
+                value:
+                  environment: agol
+                  query: "Trail Network"
+      responses:
+        '200':
+          description: Matching layer(s) found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindLayerResponse'
+        '404':
+          description: No matching item found.
+        '401':
+          description: Authentication failed against the target ArcGIS environment.
+
+  /tools/queryFeatures:
+    post:
+      operationId: queryFeatures
+      tags: [query]
+      summary: Query features from a resolved layer using an ArcGIS-style where clause.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryFeaturesRequest'
+            examples:
+              basic:
+                value:
+                  environment: enterprise
+                  layer: "Park Facilities"
+                  where: "STATUS='Active'"
+                  outFields: ["FACILITYID", "NAME", "STATUS"]
+      responses:
+        '200':
+          description: GeoJSON FeatureCollection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureCollection'
+        '400':
+          description: Invalid where clause or field list.
+        '401':
+          description: Authentication failed against the target ArcGIS environment.
+
+  /health:
+    get:
+      operationId: health
+      tags: [meta]
+      summary: Server health check.
+      responses:
+        '200':
+          description: Server is healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+                  environments:
+                    type: array
+                    items: { type: string, enum: [agol, enterprise] }
+
+components:
+  schemas:
+    FindLayerRequest:
+      type: object
+      required: [environment, query]
+      properties:
+        environment:
+          type: string
+          enum: [agol, enterprise]
+          description: Which ArcGIS environment to search.
+        query:
+          type: string
+          description: Free-text title or keyword search.
+    FindLayerResponse:
+      type: object
+      properties:
+        itemId: { type: string }
+        title: { type: string }
+        serviceUrl: { type: string, format: uri }
+        layerId: { type: integer }
+        environment: { type: string, enum: [agol, enterprise] }
+    QueryFeaturesRequest:
+      type: object
+      required: [environment, layer]
+      properties:
+        environment:
+          type: string
+          enum: [agol, enterprise]
+        layer:
+          type: string
+          description: Layer title (resolved internally via findLayer) or a direct service URL.
+        where:
+          type: string
+          default: "1=1"
+        outFields:
+          type: array
+          items: { type: string }
+          default: ["*"]
+        geometry:
+          type: object
+          description: Optional spatial filter (Esri JSON geometry).
+        resultRecordCount:
+          type: integer
+          default: 1000
+    FeatureCollection:
+      type: object
+      properties:
+        type: { type: string, example: FeatureCollection }
+        features:
+          type: array
+          items:
+            type: object
+            properties:
+              type: { type: string, example: Feature }
+              properties: { type: object }
+              geometry: { type: object }
