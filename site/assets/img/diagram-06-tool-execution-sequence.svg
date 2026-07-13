@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" role="img" aria-label="6 · MCP Tool Execution Sequence">
+<rect x="0" y="0" width="1000" height="440" fill="#f6f8fa"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#5a6b78"/>
+  </marker>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0079c1"/>
+  </marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2e8b57"/>
+  </marker>
+</defs>
+<text x="24" y="34" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#14212b">6 · MCP Tool Execution Sequence</text>
+<line x1="80" y1="70" x2="80" y2="400" stroke="#dde3e8" stroke-width="2"/>
+<g>
+<rect x="-10" y="30" width="180" height="44" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="80.0" y="54.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">Copilot Studio</text>
+</g>
+<line x1="340" y1="70" x2="340" y2="400" stroke="#dde3e8" stroke-width="2"/>
+<g>
+<rect x="250" y="30" width="180" height="44" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="340.0" y="54.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">MCP Server</text>
+</g>
+<line x1="600" y1="70" x2="600" y2="400" stroke="#dde3e8" stroke-width="2"/>
+<g>
+<rect x="510" y="30" width="180" height="44" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="600.0" y="54.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">Auth Provider</text>
+</g>
+<line x1="860" y1="70" x2="860" y2="400" stroke="#dde3e8" stroke-width="2"/>
+<g>
+<rect x="770" y="30" width="180" height="44" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="860.0" y="54.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">ArcGIS REST API</text>
+</g>
+<path d="M80,110 L340,110" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="117.6" y="89.0" width="184.8" height="18" fill="#f6f8fa"/>
+<text x="210.0" y="102.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">call_tool(queryFeatures)</text>
+<path d="M340,160 L600,160" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="399.2" y="139.0" width="141.6" height="18" fill="#f6f8fa"/>
+<text x="470.0" y="152.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">get/validate token</text>
+<path d="M600,200 L340,200" fill="none" stroke="#5a6b78" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="435.2" y="179.0" width="69.6" height="18" fill="#f6f8fa"/>
+<text x="470.0" y="192.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#5a6b78" text-anchor="middle" font-weight="600">token OK</text>
+<path d="M340,250 L860,250" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="522.0" y="229.0" width="156.0" height="18" fill="#f6f8fa"/>
+<text x="600.0" y="242.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">GET /query?where=...</text>
+<path d="M860,300 L340,300" fill="none" stroke="#5a6b78" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="522.0" y="279.0" width="156.0" height="18" fill="#f6f8fa"/>
+<text x="600.0" y="292.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#5a6b78" text-anchor="middle" font-weight="600">GeoJSON / FeatureSet</text>
+<path d="M340,350 L80,350" fill="none" stroke="#5a6b78" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="142.8" y="329.0" width="134.4" height="18" fill="#f6f8fa"/>
+<text x="210.0" y="342.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#5a6b78" text-anchor="middle" font-weight="600">structured result</text>
+</svg>

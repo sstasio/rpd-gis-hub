@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-label="3 · ArcGIS Online (AGOL) Integration Flow">
+<rect x="0" y="0" width="1000" height="420" fill="#f6f8fa"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#5a6b78"/>
+  </marker>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0079c1"/>
+  </marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2e8b57"/>
+  </marker>
+</defs>
+<text x="24" y="34" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#14212b">3 · ArcGIS Online (AGOL) Integration Flow</text>
+<g>
+<rect x="40" y="60" width="200" height="80" rx="12" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<g transform="translate(128.0,74)" fill="none" stroke="#005e96" stroke-width="2"><polygon points="12,0 24,6 24,18 12,24 0,18 0,6"/></g><text x="140.0" y="108.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">MCP Server</text>
+<text x="140.0" y="128.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">Tool: findLayer / queryFeatures</text>
+</g>
+<g>
+<rect x="330" y="40" width="220" height="70" rx="12" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<g transform="translate(431.0,56)" fill="none" stroke="#c17a00" stroke-width="2"><rect x="1" y="9" width="16" height="12" rx="2"/><path d="M4,9 V6 a5,5 0 0 1 10,0 v3"/></g><text x="440.0" y="83.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">OAuth 2.0 Token</text>
+<text x="440.0" y="103.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">www.arcgis.com/sharing/rest/oauth2/token</text>
+</g>
+<g>
+<rect x="330" y="150" width="220" height="70" rx="12" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="440.0" y="179.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">Portal Search API</text>
+<text x="440.0" y="199.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">/sharing/rest/search</text>
+</g>
+<g>
+<rect x="330" y="260" width="220" height="70" rx="12" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="440.0" y="289.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">Feature Service</text>
+<text x="440.0" y="309.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">/FeatureServer/{id}/query</text>
+</g>
+<g>
+<rect x="650" y="150" width="260" height="90" rx="12" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<g transform="translate(764.0,166)" fill="#0079c1" opacity="0.85"><circle cx="10" cy="12" r="9"/><circle cx="20" cy="8" r="11"/><circle cx="30" cy="13" r="8"/><rect x="6" y="12" width="28" height="10" rx="5"/></g><text x="780.0" y="203.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">ArcGIS Online</text>
+<text x="780.0" y="223.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">Hosted feature layers (cloud)</text>
+</g>
+<path d="M240,90 L330,75" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="225.0" y="61.5" width="120.0" height="18" fill="#f6f8fa"/>
+<text x="285.0" y="74.5" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">1. Authenticate</text>
+<path d="M240,110 Q280,150 330,175" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="230.8" y="127" width="98.4" height="18" fill="#f6f8fa"/>
+<text x="280" y="140" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">2. Find item</text>
+<path d="M240,130 Q280,230 330,285" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<rect x="212.8" y="207" width="134.4" height="18" fill="#f6f8fa"/>
+<text x="280" y="220" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12" fill="#0079c1" text-anchor="middle" font-weight="600">3. Query features</text>
+<path d="M550,75 Q600,110 650,170" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M550,185 L650,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M550,295 Q600,260 650,220" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<text x="40" y="380" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" fill="#5a6b78">Token is cached and refreshed automatically by the MCP server before each downstream call.</text></svg>
