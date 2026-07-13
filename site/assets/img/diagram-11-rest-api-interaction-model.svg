@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-label="11 · ArcGIS REST API Interaction Model">
+<rect x="0" y="0" width="1000" height="360" fill="#f6f8fa"/>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#5a6b78"/>
+  </marker>
+  <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#0079c1"/>
+  </marker>
+  <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2e8b57"/>
+  </marker>
+</defs>
+<text x="24" y="34" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#14212b">11 · ArcGIS REST API Interaction Model</text>
+<g>
+<rect x="40" y="70" width="380" height="50" rx="8" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="230.0" y="97.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">/sharing/rest/generateToken</text>
+</g>
+<g>
+<rect x="460" y="70" width="200" height="50" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="560.0" y="97.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">Auth</text>
+</g>
+<path d="M420,95 L460,95" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<g>
+<rect x="40" y="132" width="380" height="50" rx="8" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="230.0" y="159.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">/sharing/rest/search</text>
+</g>
+<g>
+<rect x="460" y="132" width="200" height="50" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="560.0" y="159.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">Discover items</text>
+</g>
+<path d="M420,157 L460,157" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<g>
+<rect x="40" y="194" width="380" height="50" rx="8" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="230.0" y="221.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">/rest/services/.../FeatureServer/{id}</text>
+</g>
+<g>
+<rect x="460" y="194" width="200" height="50" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="560.0" y="221.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">Layer metadata</text>
+</g>
+<path d="M420,219 L460,219" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<g>
+<rect x="40" y="256" width="380" height="50" rx="8" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="230.0" y="283.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">/FeatureServer/{id}/query</text>
+</g>
+<g>
+<rect x="460" y="256" width="200" height="50" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="560.0" y="283.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">Query features</text>
+</g>
+<path d="M420,281 L460,281" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<g>
+<rect x="40" y="318" width="380" height="50" rx="8" fill="#ffffff" stroke="#dde3e8" stroke-width="1.5"/>
+<text x="230.0" y="345.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">/FeatureServer/{id}/addFeatures</text>
+</g>
+<g>
+<rect x="460" y="318" width="200" height="50" rx="8" fill="#eaf4fb" stroke="#0079c1" stroke-width="1.5"/>
+<text x="560.0" y="345.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#14212b" text-anchor="middle">Edit (optional)</text>
+</g>
+<path d="M420,343 L460,343" fill="none" stroke="#0079c1" stroke-width="2" marker-end="url(#arrowBlue)"/>
+<g>
+<rect x="720" y="70" width="240" height="250" rx="12" fill="#eaf7f0" stroke="#2e8b57" stroke-width="1.5"/>
+<text x="840.0" y="189.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#14212b" text-anchor="middle">MCP Tool Layer</text>
+<text x="840.0" y="209.0" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="11.5" fill="#5a6b78" text-anchor="middle">findLayer()
+queryFeatures()
+(future) editFeatures()</text>
+</g>
+<path d="M660,95 Q690,150 720,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M660,157 Q690,150 720,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M660,219 Q690,150 720,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M660,281 Q690,150 720,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<path d="M660,343 Q690,150 720,195" fill="none" stroke="#5a6b78" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+</svg>
