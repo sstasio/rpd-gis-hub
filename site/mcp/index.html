@@ -12,6 +12,7 @@
 <header class="site-header">
   <nav class="nav">
     <a class="nav__brand" href="index.html"><span class="dot"></span> MCP GIS Hub</a>
+    <a href="../index.html" style="font-size:0.85rem;color:#5a6b78;font-weight:600;margin-right:8px;">&larr; Rec &amp; Park GIS Hub</a>
     <ul class="nav__links">
       <li><a href="index.html">Overview</a></li>
       <li><a href="agol.html">ArcGIS Online</a></li>
@@ -19,7 +20,7 @@
       <li><a href="comparison.html">Comparison</a></li>
       <li><a href="examples.html">Examples &amp; Diagrams</a></li>
       <li><a href="api-docs.html">API Docs</a></li>
-      <li><a href="https://github.com/sstasio/mcp-gis-hub" target="_blank" rel="noopener">GitHub ↗</a></li>
+      <li><a href="https://github.com/sstasio/rpd-gis-hub" target="_blank" rel="noopener">GitHub ↗</a></li>
     </ul>
   </nav>
 </header>
@@ -38,7 +39,7 @@
       Copilot Studio (or any MCP client) can search, discover, and query live feature layers in natural language.</p>
       <div class="btn-row">
         <a class="btn" href="examples.html">View architecture diagrams</a>
-        <a class="btn btn--ghost" href="../openapi/mcp.yaml">OpenAPI spec (mcp.yaml)</a>
+        <a class="btn btn--ghost" href="../../openapi/mcp.yaml">OpenAPI spec (mcp.yaml)</a>
       </div>
     </div>
   </section>
@@ -53,7 +54,7 @@
         <div class="card">
           <span class="eyebrow">Documentation site</span>
           <h3>Static, GitHub Pages‑ready</h3>
-          <p>This site — plain HTML/CSS, no build step, deployable straight from <code>/site</code>.</p>
+          <p>This subsection — plain HTML/CSS, no build step, part of the wider Rec &amp; Park GIS Hub site.</p>
         </div>
         <div class="card">
           <span class="eyebrow">CI / CD</span>
@@ -85,16 +86,18 @@
 
     <section>
       <h2>Repository layout</h2>
-      <pre><code>mcp-gis-hub/
-├── site/                     # GitHub Pages root
-│   ├── index.html, agol.html, enterprise.html, comparison.html, examples.html
-│   └── assets/{css,js,img}/
+      <pre><code>rpd-gis-hub/
+├── site/                       # GitHub Pages root
+│   ├── index.html, roadmap.html, ...   # Main GIS program site
+│   └── mcp/                     # This MCP integration subsection
+│       ├── index.html, agol.html, enterprise.html, comparison.html, examples.html
+│       └── assets/{css,js,img}/
 ├── mcp_servers/
-│   ├── node/server.js        # Live AGOL + Enterprise REST calls
-│   └── python/server.py      # Live AGOL + Enterprise REST calls
+│   ├── node/server.js          # Live AGOL + Enterprise REST calls
+│   └── python/server.py        # Live AGOL + Enterprise REST calls
 ├── openapi/
-│   └── mcp.yaml              # Swagger / OpenAPI 3.0 spec
-├── scripts/gen_diagrams.py   # Regenerates all SVG diagrams
+│   └── mcp.yaml                # Swagger / OpenAPI 3.0 spec
+├── scripts/gen_diagrams.py     # Regenerates all SVG diagrams
 └── .github/workflows/deploy.yml
 </code></pre>
     </section>

@@ -15,6 +15,7 @@
 <header class="site-header">
   <nav class="nav">
     <a class="nav__brand" href="index.html"><span class="dot"></span> MCP GIS Hub</a>
+    <a href="../index.html" style="font-size:0.85rem;color:#5a6b78;font-weight:600;margin-right:8px;">&larr; Rec &amp; Park GIS Hub</a>
     <ul class="nav__links">
       <li><a href="index.html">Overview</a></li>
       <li><a href="agol.html">ArcGIS Online</a></li>
@@ -30,7 +31,7 @@
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: "../openapi/mcp.yaml",
+      url: "../../openapi/mcp.yaml",
       dom_id: "#swagger-ui",
       presets: [SwaggerUIBundle.presets.apis],
       layout: "BaseLayout"
