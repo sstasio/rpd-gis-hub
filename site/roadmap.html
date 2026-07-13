@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIS Capture &amp; Integration Roadmap</title>
+<style>
+:root {
+  --green: #1b3a2f; --green2: #2f6f4f; --light: #eef2ef; --grey: #555555;
+  --amber-bg: #fbeee0; --amber: #8a5a00;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  margin: 0; background: #f5f7f6; color: #222; line-height: 1.55;
+}
+.wrap { max-width: 1000px; margin: 0 auto; padding: 32px 24px 80px; }
+header.page-header {
+  background: var(--green); color: white; padding: 28px 24px;
+  border-radius: 10px; margin-bottom: 28px;
+}
+header.page-header h1 { margin: 0 0 6px; font-size: 1.55rem; }
+header.page-header p { margin: 0; opacity: 0.85; font-size: 0.92rem; }
+nav.crumbs { font-size: 0.85rem; margin-bottom: 18px; }
+nav.crumbs a { color: var(--green2); text-decoration: none; font-weight: 600; }
+nav.crumbs a:hover { text-decoration: underline; }
+h2 { color: var(--green); font-size: 1.15rem; border-bottom: 2px solid var(--light); padding-bottom: 6px; margin-top: 38px; }
+h3 { color: var(--green2); font-size: 1.0rem; margin-top: 22px; }
+.lede { color: var(--grey); font-size: 0.95rem; }
+p { font-size: 0.93rem; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 0.86rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+thead th { background: var(--green); color: white; text-align: left; padding: 10px 12px; font-weight: 600; }
+tbody td { padding: 10px 12px; border-bottom: 1px solid #e2e6e4; vertical-align: top; }
+tbody tr:nth-child(even) { background: var(--light); }
+tbody tr.highlight { background: var(--amber-bg); }
+tbody tr.good { background: #dcebe2; }
+.badge { display: inline-block; background: var(--green2); color: white; border-radius: 999px; padding: 2px 10px; font-size: 0.72rem; font-weight: 600; margin-right: 6px; }
+.badge-amber { background: var(--amber); }
+.mockup-frame { background: white; border: 1px solid #dfe5e2; border-radius: 10px; padding: 16px; margin: 16px 0; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.mockup-frame img { max-width: 100%; border-radius: 6px; }
+.note { background: var(--amber-bg); border-left: 4px solid var(--amber); padding: 14px 18px; border-radius: 6px; font-size: 0.88rem; color: #4a3200; margin-top: 20px; }
+.callout { background: white; border: 1px solid #dfe5e2; border-radius: 8px; padding: 16px 22px; font-size: 0.9rem; margin: 14px 0; }
+.callout.green { border-left: 4px solid var(--green2); }
+ul, ol { font-size: 0.91rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+.card {
+  background: white; border: 1px solid #dfe5e2; border-radius: 10px; padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: transform 0.15s;
+}
+.card h3 { margin-top: 0; }
+.card a.card-link {
+  display: inline-block; margin-top: 10px; color: white; background: var(--green2);
+  text-decoration: none; padding: 7px 14px; border-radius: 6px; font-size: 0.83rem; font-weight: 600;
+}
+.card a.card-link:hover { background: var(--green); }
+.phase-pill { display:inline-block; font-size:0.7rem; font-weight:700; padding:2px 9px; border-radius:999px; color:white; margin-bottom:8px; }
+footer { margin-top: 50px; font-size: 0.8rem; color: #888; text-align: center; }
+a.download-btn { display: inline-block; background: var(--green2); color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; margin-top: 8px; margin-right: 8px; }
+a.download-btn:hover { background: var(--green); }
+.back-link { display:inline-block; margin-top: 30px; font-size: 0.85rem; color: var(--green2); text-decoration:none; font-weight:600; cursor:pointer; }
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+  table, thead, tbody, th, td, tr { display: block; }
+  thead tr { position: absolute; top: -9999px; left: -9999px; }
+  tbody tr { margin-bottom: 12px; border: 1px solid #e2e6e4; border-radius: 8px; overflow: hidden; }
+  tbody td { border-bottom: 1px solid #eee; }
+  tbody td:before { content: attr(data-label); font-weight: 700; color: var(--green); display: block; font-size: 0.72rem; text-transform: uppercase; margin-bottom: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  
+  <header class="page-header">
+    <h1>GIS Capture &amp; Integration Roadmap</h1>
+    <p>Indoors &rarr; Outdoor Infrastructure &rarr; Underground Utilities &mdash; SF Rec &amp; Park Infrastructure Assessment Program</p>
+  </header>
+  
+<p class="lede">Phased plan: Indoors/Facilities &rarr; Outdoor Infrastructure &rarr; Underground Utilities.</p>
+
+<div class="mockup-frame">
+  <img src="https://galaxy-prod.tlcdn.com/gen/user_2xKpOD4FeJt7vWsDeRRQSGr1zcA/579c0421-b5d2-46c9-9232-facd1bda29d2.png" alt="Phase flow diagram: Foundation, then Indoors, Outdoors, Underground">
+</div>
+
+<h2>Phase 0 &mdash; Foundation (runs before Phase 1, maintained throughout)</h2>
+<p>These decisions must be locked in before bulk capture begins in any phase &mdash; retrofitting them later is far more expensive than settling them once, up front.</p>
+<ul>
+<li><strong>Control network / RTK service:</strong> select one RTK correction provider and standardize on it for every capture stream.</li>
+<li><strong>Coordinate system standard:</strong> California State Plane (WKID 7132) horizontally, NAVD88 vertically &mdash; applied consistently across indoor, outdoor, and utility data.</li>
+<li><strong>ID / naming governance:</strong> hierarchical Site &rarr; Facility &rarr; Level &rarr; Unit IDs for buildings, extended with sibling Hardscape and Utility ID conventions under the same Site ID.</li>
+<li><strong>Enterprise geodatabase schema design:</strong> Indoors dataset (Sites/Facilities/Levels/Units/Details), plus new Hardscape and Utility feature datasets, all in one versioned enterprise geodatabase.</li>
+<li><strong>FME workspace templates:</strong> reusable E57&rarr;LAS georeferencing workspace, extendable to future CAD/BIM imports.</li>
+<li><strong>Pilot selection:</strong> choose one representative building + adjacent hardscape as the pilot to validate the full pipeline before scaling portfolio-wide.</li>
+</ul>
+
+<h2><span class="phase-pill" style="background:#2f6f4f;">PHASE 1</span> Indoors &mdash; Buildings &amp; Facilities</h2>
+<h3>Objective</h3>
+<p>Build a validated ArcGIS Indoors dataset for every Rec &amp; Park building, with floor-aware maps and oriented imagery ready for the Indoors Viewer and your GIS hub.</p>
+<h3>Capture</h3>
+<ul>
+<li>Primary: iPhone LiDAR + PIX4Dcatch/PIX4Dmatic (default for routine buildings).</li>
+<li>Secondary: Polycam for quick single-room documentation; Realsee kept in rotation where already convenient.</li>
+<li>Rent a dedicated scanner (BLK2GO/NavVis) only for unusually large/complex facilities.</li>
+</ul>
+<h3>Processing &amp; Integration</h3>
+<ul>
+<li>FME: E57/point cloud &rarr; georeferenced LAS (control-point transform tied to the RTK network).</li>
+<li>ArcGIS Pro: Generate Floor Plan From Point Cloud &rarr; manual cleanup &rarr; Import Features to Indoor Dataset.</li>
+<li>Oriented imagery: Import Indoor Images for 360&deg; panoramas per floor.</li>
+<li>Attribute enrichment: room USE_TYPE, webTMA asset cross-reference IDs, occupancy/space-planning fields.</li>
+</ul>
+<div class="callout green"><strong>&#9654; Gate to Phase 2:</strong> pilot building fully validated end-to-end (capture &rarr; import &rarr; published map) before scaling to the full building portfolio.</div>
+
+<h2><span class="phase-pill" style="background:#2f6f4f;">PHASE 2</span> Outdoors &mdash; Hardscape &amp; Site Infrastructure</h2>
+<h3>Objective</h3>
+<p>Document courts, trails, plazas, parking, and site amenities as standard outdoor GIS asset layers (NOT part of the Indoors interior data model), tied to the same Site IDs established in Phase 1.</p>
+<h3>Capture</h3>
+<ul>
+<li><strong>Gap to close:</strong> aerial imagery capability for efficient large-area orthomosaic capture &mdash; met via existing EagleView/Spexi service accounts rather than an in-house drone.</li>
+<li>RTK-corrected GNSS + Survey123 for discrete point features (benches, light poles, drain inlets, playground equipment, signage).</li>
+<li>Polycam / phone 360 for quick condition-assessment documentation of individual amenities.</li>
+<li><strong>PIX4Dcatch on large flat hardscape areas</strong> (courts, plazas, large paved paths): per PIX4D&#8217;s own capture guidance, walk straight lines with gentle turns, keep parallel walking paths spaced roughly <strong>2.5 meters</strong> apart, hold the device at a fixed slight tilt rather than pointing straight down &#8212; pointing straight down can hurt satellite signal acquisition when an external RTK device is connected. See the <a href="field-capture-methodology.html">Field Capture Methodology</a> page for the full official Do&#8217;s/Don&#8217;ts reference.</li>
+</ul>
+<h3>Schema &amp; Integration</h3>
+<ul>
+<li>New Hardscape feature dataset (separate from Indoors schema) &mdash; polygons for paved areas/courts, lines for trails, points for amenities &mdash; all keyed to Site ID.</li>
+<li>Condition-scoring attributes built into the schema from day one, cross-referenced to webTMA asset IDs.</li>
+</ul>
+<div class="callout green"><strong>&#9654; Gate to Phase 3:</strong> hardscape schema and pilot site published and validated; imagery workflow proven repeatable by staff.</div>
+
+<h2><span class="phase-pill" style="background:#2f6f4f;">PHASE 3</span> Underground &mdash; Utilities: Water &amp; Sewer</h2>
+<h3>Objective</h3>
+<p>Document Rec &amp; Park-owned utility infrastructure and integrate reference access to city-owned utility networks, without duplicating data SFPUC already maintains.</p>
+<h3>Step 0 &mdash; Resolve ownership (before any capture spend)</h3>
+<ul>
+<li>Determine which utility infrastructure is Rec &amp; Park-owned (irrigation, small distribution lines, on-site sewer laterals) versus SFPUC-owned (water/sewer mains).</li>
+<li>For SFPUC-owned infrastructure: pursue a data-sharing agreement to bring existing utility GIS layers in as read-only reference layers &mdash; do not recapture.</li>
+</ul>
+<h3>Capture (Rec &amp; Park-owned assets only)</h3>
+<ul>
+<li>GPR (ground-penetrating radar) or professional utility locating for undocumented/buried lines &mdash; contracted service, not in-house.</li>
+<li>RTK GNSS + Survey123 for visible surface features: valves, hydrants, cleanouts, manholes, meter boxes.</li>
+<li>Coordinate with 811/USA utility locates before any invasive fieldwork.</li>
+</ul>
+<h3>Schema decision</h3>
+<p>Default to a simple <strong>asset inventory</strong> schema (point/line feature classes with attributes). Only adopt the full <strong>ArcGIS Utility Network</strong> model if there's a specific tracing/isolation-analysis requirement.</p>
+<div class="callout green"><strong>&#9654; Program complete</strong> when Indoors, Hardscape, and Utility layers all share consistent Site IDs, CRS, and metadata standards under one enterprise geodatabase.</div>
+
+  <a class="back-link" onclick="history.back()">&larr; Back</a>
+  <footer>Rec &amp; Park GIS Indoors Program &mdash; internal reference document</footer>
+</div>
+</body>
+</html>
